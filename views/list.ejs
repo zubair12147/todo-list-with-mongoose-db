@@ -1,13 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
     <title>To do List</title>
-</head>
-<body>
-    <div class="container">
-        <h1>Today is : <%= day %></h1>
+  </head>
+  <body>
+    <div class="box" id="heading">
+      <h1><%= today %></h1>
     </div>
-</body>
+    <div class="box">
+      <% for(var items of item){ %>
+      <div class="item">
+        <input type="checkbox">
+        <p><%= items %></p>
+      </div>
+      <% } %>
+      <form action="/" method="post">
+        <input type="text" name="newItem" id="newItem" placeholder="New Item" autocomplete="off"/>
+        <button type="submit" name="button">+</button>
+      </form>
+    </div>
+  </body>
 </html>
